@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block head %}BLNK Bank System Signup{% endblock %}
+{% block title %}Sign-Up{% endblock %}
+<body>
+<div class="container">
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create a new account">
+</form>
+</div>
+</body>
+{% block buttontitle %}Sign-up{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block head %}Customer Amortization Table{% endblock %}
+{% block title %}Dashboard{% endblock %}
+{% block heading %}My Information{% endblock %}
+{% block email %}Email: @gmail.com{% endblock %}
+{% block balance %}Balance: 1100 L.E{% endblock %}
+{% block secondtitle %}Taken Loans{% endblock %}
+{% block content %}
+    <table class="table">
+        <thead class="table-dark">
+        <tr>
+            <th>Provider</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Amount</th>
+            <th>Interest</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for loan in requiredloans %}
+            <tr>
+                <td>
+                    {{ loan.customer_name }}
+                    {#                    <small class="text-muted d-block">{{ loan.provider_name }}</small>#}
+                </td>
+                <td>{{ loan.provider_name }}</td>
+                <td>{{ loan.start_date }}</td>
+                <td>{{ loan.end_date }}</td>
+                <td>{{ loan.loan_amount }}</td>
+                <td>{{ loan.interest }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>{% endblock %}
+{% block thirdtitle %}My Amortization Table{% endblock %}
+{% block secondcontent %}
+    <table class="table">
+        <thead class="table-dark">
+        <tr>
+            <th>Payment Date</th>
+            <th>Loan Amount</th>
+            <th>Interest</th>
+            <th>Balance</th>
+            <th>Provider</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for loan in requiredloans %}
+            <tr>
+                <td>
+                    {{ loan.customer_name }}
+                    {#                    <small class="text-muted d-block">{{ loan.provider_name }}</small>#}
+                </td>
+                <td>{{ loan.provider_name }}</td>
+                <td>{{ loan.start_date }}</td>
+                <td>{{ loan.end_date }}</td>
+                <td>{{ loan.loan_amount }}</td>
+                <td>{{ loan.interest }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>{% endblock %}
+{% block buttontitle %}
+    Take a Loan!
+{% endblock %}
